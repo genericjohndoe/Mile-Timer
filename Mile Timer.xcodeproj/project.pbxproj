@@ -11,6 +11,7 @@
 		9FCFD0771F65A94700D19EED /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD0761F65A94700D19EED /* Stopwatch.swift */; };
 		9FCFD0791F65B03F00D19EED /* MileTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD0781F65B03F00D19EED /* MileTimeTableView.swift */; };
 		9FCFD07B1F68826800D19EED /* WeatherNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD07A1F68826800D19EED /* WeatherNetworking.swift */; };
+		9FCFD07E1F68A4B000D19EED /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD07C1F68A4B000D19EED /* Model.xcdatamodeld */; };
 		9FFE57841F65A3430099F82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE57831F65A3430099F82F /* AppDelegate.swift */; };
 		9FFE57861F65A3430099F82F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE57851F65A3430099F82F /* ViewController.swift */; };
 		9FFE57891F65A3430099F82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFE57871F65A3430099F82F /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		9FCFD0761F65A94700D19EED /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		9FCFD0781F65B03F00D19EED /* MileTimeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MileTimeTableView.swift; sourceTree = "<group>"; };
 		9FCFD07A1F68826800D19EED /* WeatherNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherNetworking.swift; sourceTree = "<group>"; };
+		9FCFD07D1F68A4B000D19EED /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9FFE57801F65A3430099F82F /* Mile Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mile Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFE57831F65A3430099F82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FFE57851F65A3430099F82F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				9FFE57951F65A3870099F82F /* Podfile */,
 				9FCFD0761F65A94700D19EED /* Stopwatch.swift */,
 				9FCFD07A1F68826800D19EED /* WeatherNetworking.swift */,
+				9FCFD07C1F68A4B000D19EED /* Model.xcdatamodeld */,
 			);
 			path = "Mile Timer";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				9FFE57841F65A3430099F82F /* AppDelegate.swift in Sources */,
 				9FCFD07B1F68826800D19EED /* WeatherNetworking.swift in Sources */,
 				9FCFD0791F65B03F00D19EED /* MileTimeTableView.swift in Sources */,
+				9FCFD07E1F68A4B000D19EED /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9FCFD07C1F68A4B000D19EED /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9FCFD07D1F68A4B000D19EED /* Model.xcdatamodel */,
+			);
+			currentVersion = 9FCFD07D1F68A4B000D19EED /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9FFE57781F65A3430099F82F /* Project object */;
 }
