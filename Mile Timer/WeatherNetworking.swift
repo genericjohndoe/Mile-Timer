@@ -27,7 +27,7 @@ class WeatherNetworking {
         components.queryItems?.append(URLQueryItem(name: "cnt", value: "1"))
         components.queryItems?.append(URLQueryItem(name: "APPID", value: "156132b426eb2ace363facf49fa70c01"))
         
-        print(components.url!)
+        //print(components.url!)
         
         let request = NSMutableURLRequest(url: components.url!)
         let session = URLSession.shared
@@ -51,7 +51,28 @@ class WeatherNetworking {
                 return
             }
             
+            do {
+                //print("data description \(data.description)")
+                let parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+//                for k in parsedResult.keys{
+//                    print(k)
+//                }
+                //print(parsedResult)
+                let list = parsedResult["list"] as! NSArray
+                let dictionary = list[0] as! NSDictionary
+                let temps = dictionary["temp"]! as! [String: Any]
+                //print(temps)
+                let high = temps["max"]!
+                let low = temps["min"]!
+                print("\(high) \(low)")
+            } catch {
+                completion(false, "Could not parse the data as JSON")
+                print("Could not parse the data as JSON")
+                return
+            }
+            
         }
         task.resume()
+        return
     }
 }
