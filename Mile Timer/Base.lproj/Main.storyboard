@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NjF-ZI-LQa">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -32,7 +32,7 @@
             <objects>
                 <navigationController id="7md-Fo-bFk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Timer" id="7Ta-HL-kHf"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4hP-BI-fnz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4hP-BI-fnz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -53,34 +53,34 @@
                         <viewControllerLayoutGuide type="bottom" id="vY9-SE-Da0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3cK-2b-fBC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-1t-oU9">
-                                <rect key="frame" x="32" y="72" width="256" height="54"/>
+                                <rect key="frame" x="59.5" y="72" width="256" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vuH-Zf-4eC">
-                                <rect key="frame" x="0.0" y="401" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIQ-iD-bdq">
-                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="StartTimer:" destination="0jF-XO-0FF" eventType="touchUpInside" id="a6t-qW-FKe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-jp-KMC">
-                                        <rect key="frame" x="106.5" y="0.0" width="107" height="30"/>
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="StopTimer:" destination="0jF-XO-0FF" eventType="touchUpInside" id="vYV-xw-9ac"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otk-9i-Y4q">
-                                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="30"/>
+                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetTimer:" destination="0jF-XO-0FF" eventType="touchUpInside" id="INF-Ck-eFR"/>
@@ -89,7 +89,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tr-tf-9I2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="134" width="320" height="259"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -109,11 +109,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mile Timer" id="IhG-pV-SER">
-                        <barButtonItem key="leftBarButtonItem" title="Weather" id="uec-QH-wnJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Weather" id="uec-QH-wnJ">
+                            <connections>
+                                <action selector="getWeatherData:" destination="0jF-XO-0FF" id="kHe-2L-tnZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="Ylu-b1-bDl">
+                            <connections>
+                                <action selector="saveData:" destination="0jF-XO-0FF" id="b2i-uA-vQg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="5Tr-tf-9I2" id="g9t-0z-79T"/>
                         <outlet property="reset" destination="otk-9i-Y4q" id="7Of-pC-TfX"/>
+                        <outlet property="save" destination="Ylu-b1-bDl" id="MeA-SH-EyE"/>
                         <outlet property="startResume" destination="DIQ-iD-bdq" id="pAZ-lG-w7K"/>
                         <outlet property="stopPause" destination="MGk-jp-KMC" id="Zgs-Rj-HnU"/>
                         <outlet property="timeLabel" destination="bLz-1t-oU9" id="4Oa-DG-3rI"/>
@@ -128,15 +138,15 @@
             <objects>
                 <tableViewController id="AQy-SS-VAw" customClass="MileTimeTableView" customModule="Mile_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="k1J-bx-TZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="miletimes" id="Hmy-hl-HXQ">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hmy-hl-HXQ" id="fN9-Qk-l5g">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -157,7 +167,7 @@
             <objects>
                 <navigationController id="A6b-Pt-h08" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mile Times" id="Ukv-hL-KV2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Baf-j8-b2y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Baf-j8-b2y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
