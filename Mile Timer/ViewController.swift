@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stopPause: UIButton!
     @IBOutlet weak var startResume: UIButton!
     @IBOutlet weak var save: UIBarButtonItem!
+    @IBOutlet weak var weather: UIBarButtonItem!
     
     let stopwatch = Stopwatch()
     var isRunning = false
@@ -108,10 +109,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("location error")
     }
     
-    @IBAction func getWeatherData(_ sender: Any) {
+    @IBAction func getWeatherData(_ sender: UIBarButtonItem) {
         WeatherNetworking.shared.getWeatherData(coordinates: coordinate){
-            (success, error) in
-            
+            (success, error, temps) in
+            if success{
+                DispatchQueue.main.async{
+                    sender.title = temps
+                }
+            }
         }
     }
     

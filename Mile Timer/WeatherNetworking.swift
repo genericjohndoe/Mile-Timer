@@ -12,7 +12,7 @@ import CoreLocation
 class WeatherNetworking {
     static let shared = WeatherNetworking()
     
-    func getWeatherData(coordinates: CLLocationCoordinate2D, completion: @escaping (_ success: Bool, _ error: String) -> Void){
+    func getWeatherData(coordinates: CLLocationCoordinate2D, completion: @escaping (_ success: Bool, _ error: String, _ temps: String) -> Void){
         
         var components = URLComponents()
         components.scheme = "https"
@@ -34,19 +34,19 @@ class WeatherNetworking {
         let task = session.dataTask(with: request as URLRequest){ data, response, error in
             
             guard error == nil else {
-                completion(false, "error")
+                completion(false, "error", "")
                 print("error")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                completion(false, "Your request returned a status code other than 2xx")
+                completion(false, "Your request returned a status code other than 2xx", "")
                 print("Your request returned a status code other than 2xx")
                 return
             }
             
             guard let data = data else {
-                completion(false, "No data was returned by the request")
+                completion(false, "No data was returned by the request", "")
                 print("No data was returned by the request")
                 return
             }
@@ -64,9 +64,11 @@ class WeatherNetworking {
                 //print(temps)
                 let high = temps["max"]!
                 let low = temps["min"]!
-                print("\(high) \(low)")
+                completion(true,"","\(high)/\(low)")
+                //print("\(high)/\(low)")
+                return
             } catch {
-                completion(false, "Could not parse the data as JSON")
+                completion(false, "Could not parse the data as JSON", "")
                 print("Could not parse the data as JSON")
                 return
             }

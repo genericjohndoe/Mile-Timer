@@ -127,6 +127,7 @@
                         <outlet property="startResume" destination="DIQ-iD-bdq" id="pAZ-lG-w7K"/>
                         <outlet property="stopPause" destination="MGk-jp-KMC" id="Zgs-Rj-HnU"/>
                         <outlet property="timeLabel" destination="bLz-1t-oU9" id="4Oa-DG-3rI"/>
+                        <outlet property="weather" destination="uec-QH-wnJ" id="9bA-zY-val"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rq7-g8-75w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,7 +147,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hmy-hl-HXQ" id="fN9-Qk-l5g">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
