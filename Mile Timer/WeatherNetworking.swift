@@ -52,20 +52,14 @@ class WeatherNetworking {
             }
             
             do {
-                //print("data description \(data.description)")
                 let parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
-//                for k in parsedResult.keys{
-//                    print(k)
-//                }
-                //print(parsedResult)
                 let list = parsedResult["list"] as! NSArray
                 let dictionary = list[0] as! NSDictionary
                 let temps = dictionary["temp"]! as! [String: Any]
-                //print(temps)
+                
                 let high = temps["max"]!
                 let low = temps["min"]!
                 completion(true,"","\(high)/\(low)")
-                //print("\(high)/\(low)")
                 return
             } catch {
                 completion(false, "Could not parse the data as JSON", "")

@@ -11,5 +11,17 @@ import CoreData
 
 @objc(RunningTimes)
 public class RunningTimes: NSManagedObject {
+    
+    convenience init(minpermile: Double, context: NSManagedObjectContext) {
+        
+        if let ent = NSEntityDescription.entity(forEntityName: "RunningTimes", in: context) {
+            
+            self.init(entity: ent, insertInto: context)
+            self.minpermile = minpermile
+            
+        } else {
+            fatalError("Unable To Find Entity Name!")
+        }
+    }
 
 }

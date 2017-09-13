@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -21,11 +22,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weather: UIBarButtonItem!
     
     let stopwatch = Stopwatch()
+    let stack = (UIApplication.shared.delegate as! AppDelegate).stack
     var isRunning = false
     var locationManager: CLLocationManager = CLLocationManager()
     let path = GMSMutablePath()
     var intervals = 0
     var coordinate = CLLocationCoordinate2D()
+    
 
 
     
@@ -121,6 +124,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func saveData(_ sender: Any) {
+        let timeArray = timeLabel.text?.components(separatedBy: ":")
+        let numbMinutes = Double(timeArray[0])*60 + Double(timeArray[1]) + Double(timeArray[2])/60.0
+        let numbMiles = intervals*10*0.000621371
+        RunningTimes(minpermile: numbMinutes/numbMiles, context: stack.context)
+        stack.save()
     }
 }
 
