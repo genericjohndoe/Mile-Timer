@@ -1,0 +1,7 @@
+this is a stopwatch app that can also track your location
+the app should ask permission to track and show your location in the map view
+to start the timer, press the start button
+to stop the timer and enable the save button press the stop button
+as the user move, polylines appear to show the path the user has ran
+pressing the weather button shows the high and low temps in degree centigrade
+the table view shows the fastest times
