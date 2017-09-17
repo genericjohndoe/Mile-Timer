@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class WeatherNetworking {
     static let shared = WeatherNetworking()
@@ -70,5 +71,16 @@ class WeatherNetworking {
         }
         task.resume()
         return
+    }
+    
+    func showErrorOnMain(_ vc: UIViewController,_ error: String){
+        DispatchQueue.main.async{
+            let AlertController = UIAlertController(title: "", message: error, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) {
+                action in AlertController.dismiss(animated: true, completion: nil)
+            }
+            AlertController.addAction(cancelAction)
+            vc.present(AlertController, animated: true, completion: nil)
+        }
     }
 }

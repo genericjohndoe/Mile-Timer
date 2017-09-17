@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var startResume: UIButton!
     @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var weather: UIBarButtonItem!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     let stopwatch = Stopwatch()
     let stack = (UIApplication.shared.delegate as! AppDelegate).stack
@@ -113,12 +114,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func getWeatherData(_ sender: UIBarButtonItem) {
+        indicator.startAnimating()
         WeatherNetworking.shared.getWeatherData(coordinates: coordinate){
             (success, error, temps) in
             if success{
                 DispatchQueue.main.async{
                     sender.title = temps
+                    self.indicator.stopAnimating()
                 }
+            }
+            else{
+                WeatherNetworking.shared.showErrorOnMain(self, "No weather data can be shown")
+                self.indicator.stopAnimating()
             }
         }
     }

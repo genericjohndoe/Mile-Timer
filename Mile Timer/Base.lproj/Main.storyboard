@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-1t-oU9">
-                                <rect key="frame" x="59.5" y="72" width="256" height="54"/>
+                                <rect key="frame" x="60" y="72" width="256" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -92,13 +92,18 @@
                                 <rect key="frame" x="0.0" y="134" width="375" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x3z-Nt-aun">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vuH-Zf-4eC" firstAttribute="top" secondItem="5Tr-tf-9I2" secondAttribute="bottom" constant="8" id="2vG-xC-dBt"/>
                             <constraint firstItem="5Tr-tf-9I2" firstAttribute="top" secondItem="bLz-1t-oU9" secondAttribute="bottom" constant="8" id="4i6-h4-wOG"/>
+                            <constraint firstItem="x3z-Nt-aun" firstAttribute="centerY" secondItem="3cK-2b-fBC" secondAttribute="centerY" id="5oX-wv-mNO"/>
                             <constraint firstItem="5Tr-tf-9I2" firstAttribute="top" secondItem="bLz-1t-oU9" secondAttribute="bottom" constant="8" id="6fG-Ei-EMq"/>
                             <constraint firstItem="bLz-1t-oU9" firstAttribute="centerX" secondItem="3cK-2b-fBC" secondAttribute="centerX" id="DQf-nb-BKm"/>
+                            <constraint firstItem="x3z-Nt-aun" firstAttribute="centerX" secondItem="3cK-2b-fBC" secondAttribute="centerX" id="W8J-NP-ydg"/>
                             <constraint firstItem="vuH-Zf-4eC" firstAttribute="leading" secondItem="3cK-2b-fBC" secondAttribute="leading" id="XU1-WW-lxe"/>
                             <constraint firstItem="vY9-SE-Da0" firstAttribute="top" secondItem="vuH-Zf-4eC" secondAttribute="bottom" id="a8Q-f7-8wx"/>
                             <constraint firstItem="5Tr-tf-9I2" firstAttribute="leading" secondItem="3cK-2b-fBC" secondAttribute="leading" id="dtx-sb-n9y"/>
@@ -121,6 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicator" destination="x3z-Nt-aun" id="Yda-tG-3nN"/>
                         <outlet property="map" destination="5Tr-tf-9I2" id="g9t-0z-79T"/>
                         <outlet property="reset" destination="otk-9i-Y4q" id="7Of-pC-TfX"/>
                         <outlet property="save" destination="Ylu-b1-bDl" id="MeA-SH-EyE"/>
@@ -147,11 +153,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hmy-hl-HXQ" id="fN9-Qk-l5g">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Ls-62-INN">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
