@@ -26,7 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var isRunning = false
     var locationManager: CLLocationManager = CLLocationManager()
     let path = GMSMutablePath()
-    var intervals = 10.0
+    var intervals = 0.0
     var coordinate = CLLocationCoordinate2D()
     
 
@@ -130,7 +130,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let seconds = Double((timeArray?[2])!)!/60.0
         let numbMinutes = hours + minutes! + seconds
         let numbMiles: Double = self.intervals*0.00621371
-        RunningTimes(minpermile: numbMinutes/numbMiles, context: stack.context)
+        let minmile =  numbMinutes/numbMiles
+    //let r = RunningTimes(
+        let r = RunningTimes(minpermile:minmile , context: stack.context)
+        //let runningtimes = RunningTimes(minpermile: minmile, context: stack.context)
         stack.save()
     }
 }

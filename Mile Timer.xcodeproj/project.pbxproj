@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		839AA3D054856EB860C449EF /* libPods-Mile Timer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6769F0FAB836FA5F5C033DD /* libPods-Mile Timer.a */; };
+		9F60F71C1F6E040100526424 /* RunningTimes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60F71A1F6E040100526424 /* RunningTimes+CoreDataClass.swift */; };
+		9F60F71D1F6E040100526424 /* RunningTimes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60F71B1F6E040100526424 /* RunningTimes+CoreDataProperties.swift */; };
 		9FCFD0771F65A94700D19EED /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD0761F65A94700D19EED /* Stopwatch.swift */; };
 		9FCFD0791F65B03F00D19EED /* MileTimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD0781F65B03F00D19EED /* MileTimeTableView.swift */; };
 		9FCFD07B1F68826800D19EED /* WeatherNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD07A1F68826800D19EED /* WeatherNetworking.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F60F71A1F6E040100526424 /* RunningTimes+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RunningTimes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9F60F71B1F6E040100526424 /* RunningTimes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RunningTimes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9FCFD0761F65A94700D19EED /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		9FCFD0781F65B03F00D19EED /* MileTimeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MileTimeTableView.swift; sourceTree = "<group>"; };
 		9FCFD07A1F68826800D19EED /* WeatherNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherNetworking.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		9FFE57821F65A3430099F82F /* Mile Timer */ = {
 			isa = PBXGroup;
 			children = (
+				9F60F71A1F6E040100526424 /* RunningTimes+CoreDataClass.swift */,
+				9F60F71B1F6E040100526424 /* RunningTimes+CoreDataProperties.swift */,
 				9FFE57831F65A3430099F82F /* AppDelegate.swift */,
 				9FFE57851F65A3430099F82F /* ViewController.swift */,
 				9FFE57871F65A3430099F82F /* Main.storyboard */,
@@ -244,7 +250,9 @@
 				9FFE57861F65A3430099F82F /* ViewController.swift in Sources */,
 				9FCFD0771F65A94700D19EED /* Stopwatch.swift in Sources */,
 				9FFE57841F65A3430099F82F /* AppDelegate.swift in Sources */,
+				9F60F71C1F6E040100526424 /* RunningTimes+CoreDataClass.swift in Sources */,
 				9FCFD07B1F68826800D19EED /* WeatherNetworking.swift in Sources */,
+				9F60F71D1F6E040100526424 /* RunningTimes+CoreDataProperties.swift in Sources */,
 				9FCFD0791F65B03F00D19EED /* MileTimeTableView.swift in Sources */,
 				9FCFD07E1F68A4B000D19EED /* Model.xcdatamodeld in Sources */,
 			);
